@@ -29,6 +29,185 @@ export const mockApiResponses = {
     },
   },
 
+  "GET /users/me/": {
+    id: 1,
+    first_name: "Demo",
+    last_name: "User",
+    username: "demo_user",
+    email: "demo@example.com",
+    role: "host",
+    profile: {
+      avatar: "/friendly-podcast-host.png",
+      bio: "Hosting immersive film screenings for the community.",
+      location: "Brooklyn, NY",
+      timezone: "America/New_York",
+      headline: "Cinematic curator & watch party producer",
+    },
+  },
+
+  "PATCH /users/me/": {
+    success: true,
+  },
+
+  "GET /settings/overview/": {
+    open_support_tickets: 2,
+    pending_invitations: 5,
+    integrations_connected: 3,
+    notifications_enabled: 4,
+  },
+
+  "GET /settings/account/": {
+    email: "demo@example.com",
+    plan: {
+      name: "Studio Plus",
+      renewal_date: "2024-02-01T00:00:00Z",
+      seat_limit: 10,
+      seats_used: 4,
+      features: [
+        "Unlimited watch parties",
+        "Custom branding",
+        "Priority support",
+        "Advanced analytics",
+      ],
+    },
+    billing_portal_url: "https://billing.example.com/portal",
+    connected_identities: [
+      { provider: "Google", email: "demo@example.com", status: "verified" },
+      { provider: "Slack", email: "studio@slack.com", status: "pending" },
+    ],
+  },
+
+  "PATCH /settings/account/": {
+    success: true,
+  },
+
+  "GET /settings/security/": {
+    two_factor_enabled: true,
+    backup_codes_remaining: 6,
+    session_timeout_minutes: 45,
+    allow_new_devices: false,
+    alert_on_unusual_activity: true,
+  },
+
+  "PATCH /settings/security/": {
+    success: true,
+  },
+
+  "GET /settings/preferences/": {
+    timezone: "America/New_York",
+    theme: "dark",
+    language: "English (US)",
+    notification_channels: {
+      email: true,
+      sms: false,
+      push: true,
+    },
+    weekly_digest: true,
+  },
+
+  "PATCH /settings/preferences/": {
+    success: true,
+  },
+
+  "GET /integrations/providers/": {
+    providers: [
+      {
+        id: "youtube",
+        name: "YouTube",
+        description: "Import premieres, member-only videos, and channel analytics.",
+        category: "Streaming",
+        status: "connected",
+        features: [
+          "Sync scheduled livestreams",
+          "Auto-create watch parties",
+          "Track subscriber growth",
+        ],
+        icon: "youtube",
+      },
+      {
+        id: "twitch",
+        name: "Twitch",
+        description: "Connect creator events and chat engagement for co-streams.",
+        category: "Streaming",
+        status: "available",
+        features: [
+          "Pull channel schedule",
+          "Enable chat overlays",
+          "Reward loyal viewers",
+        ],
+        icon: "twitch",
+      },
+      {
+        id: "slack",
+        name: "Slack",
+        description: "Share go-live alerts with your production team instantly.",
+        category: "Collaboration",
+        status: "available",
+        features: [
+          "Post watch party reminders",
+          "Escalate support tickets",
+          "Sync channel guests",
+        ],
+        icon: "slack",
+      },
+      {
+        id: "vimeo",
+        name: "Vimeo OTT",
+        description: "Distribute premium screenings with DRM-protected assets.",
+        category: "Streaming",
+        status: "coming_soon",
+        features: [
+          "Sync OTT catalog",
+          "Gate by subscription tier",
+          "Surface rental performance",
+        ],
+        icon: "vimeo",
+        premium: true,
+      },
+    ],
+  },
+
+  "GET /integrations/accounts/": {
+    accounts: [
+      {
+        id: "youtube-main",
+        provider_id: "youtube",
+        provider_name: "YouTube",
+        account_name: "WatchTogether Studio",
+        status: "connected",
+        last_synced_at: "2024-01-15T18:30:00Z",
+        scopes: ["videos.read", "analytics.read"],
+      },
+      {
+        id: "slack-production",
+        provider_id: "slack",
+        provider_name: "Slack",
+        account_name: "Production HQ",
+        status: "connected",
+        last_synced_at: "2024-01-15T18:45:00Z",
+        scopes: ["channels:write", "chat:write"],
+      },
+    ],
+  },
+
+  "GET /integrations/settings/": {
+    auto_sync: true,
+    sync_window_minutes: 60,
+    notify_on_failure: true,
+  },
+
+  "PATCH /integrations/settings/": {
+    success: true,
+  },
+
+  "POST /integrations/connect/": {
+    status: "connected",
+  },
+
+  "POST /integrations/disconnect/": {
+    status: "disconnected",
+  },
+
   // Dashboard stats
   "GET /dashboard/stats/": {
     total_parties: 12,
