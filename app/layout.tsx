@@ -8,19 +8,6 @@ import { Suspense } from "react"
 import "./globals.css"
 
 import { ThemeProvider } from "@/components/ui/theme-provider"
-import { Source_Serif_4, Geist as V0_Font_Geist, Geist_Mono as V0_Font_Geist_Mono, Source_Serif_4 as V0_Font_Source_Serif_4 } from 'next/font/google'
-
-// Initialize fonts
-V0_Font_Geist({ weight: ["100","200","300","400","500","600","700","800","900"] })
-V0_Font_Geist_Mono({ weight: ["100","200","300","400","500","600","700","800","900"] })
-V0_Font_Source_Serif_4({ weight: ["200","300","400","500","600","700","800","900"] })
-
-const sourceSerifFont = Source_Serif_4({
-  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
-  subsets: ["latin"],
-  variable: "--font-serif",
-  display: "swap",
-})
 
 export const metadata: Metadata = {
   title: "WatchTogether - Cinema & Watch Party Platform",
@@ -43,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} ${sourceSerifFont.variable} antialiased`}>
+      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}>
         <ThemeProvider>
           <Suspense fallback={null}>{children}</Suspense>
         </ThemeProvider>

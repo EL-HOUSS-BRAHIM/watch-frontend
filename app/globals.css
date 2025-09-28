@@ -55,7 +55,7 @@
   /* Typography */
   --font-sans: "Geist", "Geist Fallback";
   --font-mono: "Geist Mono", "Geist Mono Fallback";
-  --font-serif: "Source Serif 4", "Source Serif 4 Fallback";
+  --font-serif: "Georgia", "Times New Roman", serif;
 
   /* Shadows for depth */
   --shadow-x: 0px;
@@ -161,7 +161,7 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  --font-serif: "Source Serif 4", "Source Serif 4 Fallback";
+  --font-serif: "Georgia", "Times New Roman", serif;
 
   /* Enhanced shadow system for cinema depth */
   --shadow-2xs: var(--shadow-x) var(--shadow-y)
