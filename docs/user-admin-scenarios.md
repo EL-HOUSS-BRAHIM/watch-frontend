@@ -14,9 +14,9 @@ This document outlines end-to-end scenarios the Next.js frontend must support fo
 ### 1. First-Time Visitor → Registered Host
 1. Visit marketing landing (`/(marketing)`).
 2. Explore pricing, click **Get Started**.
-3. Register via `/(auth)/register` (POST `/api/auth/register/`).
+3. Register via `/auth/register` (POST `/api/auth/register/`).
 4. Verify email using link hitting `/(auth)/verify-email/[token]`.
-5. Log in `/(auth)/login` (POST `/api/auth/login/`).
+5. Log in `/auth/login` (POST `/api/auth/login/`).
 6. Redirect to dashboard home `/(dashboard)`; load stats via `GET /api/dashboard/stats/`.
 7. Complete profile in `/(dashboard)/settings/profile` (PATCH `/api/users/me/`).
 
@@ -31,7 +31,7 @@ This document outlines end-to-end scenarios the Next.js frontend must support fo
 8. Host can trigger polls (`POST /api/interactive/parties/{partyId}/polls/create/`) and screen share (WebRTC handshake via interactive WebSocket endpoints).
 
 ### 3. Participant Joins from Invitation
-1. Receives invitation email linking to `/(auth)/login?next=/join/party/{partyId}`.
+1. Receives invitation email linking to `/auth/login?next=/join/party/{partyId}`.
 2. After login, join page fetches party metadata (`GET /api/parties/{id}/`) and ensures access.
 3. Participant enters lobby `ws/party/{id}/lobby/` for readiness, then transitions into party.
 4. Interacts via chat, reactions, polls, and purchases merch from store sidebar (`POST /api/store/purchase/`).
@@ -51,7 +51,7 @@ This document outlines end-to-end scenarios the Next.js frontend must support fo
 ## Admin Scenarios
 
 ### A. Platform Overview & Moderation
-1. Admin signs in (`/(auth)/login` → `role === admin`).
+1. Admin signs in (`/auth/login` → `role === admin`).
 2. Redirect to admin home `/(admin)`.
 3. Dashboard loads KPIs using `GET /api/admin/overview/` & `/api/analytics/platform/`.
 4. Navigate to moderation queue `/(admin)/moderation`; fetch reports via `GET /api/moderation/reports/`.

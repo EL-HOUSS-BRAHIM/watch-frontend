@@ -9,12 +9,14 @@ app/
 ├─ (marketing)/
 │  ├─ page.tsx                # Landing
 │  ├─ pricing/page.tsx        # Pricing + plans
-│  └─ features/page.tsx       # Feature overview
+│  ├─ features/page.tsx       # Feature overview
+│  ├─ privacy/page.tsx        # Privacy policy
+│  ├─ terms/page.tsx          # Terms of service
+│  └─ contact/page.tsx        # Team contact options
 ├─ (auth)/
-│  ├─ login/page.tsx          # Email/password & social login
-│  ├─ register/page.tsx       # Registration flow
-│  ├─ reset-password/page.tsx # Reset request + update
-│  └─ verify-email/[token]/page.tsx
+│  └─ auth/
+│     ├─ login/page.tsx       # Email/password & social login
+│     └─ register/page.tsx    # Registration flow
 ├─ (dashboard)/
 │  ├─ layout.tsx
 │  ├─ page.tsx                # Personalized feed & quick actions

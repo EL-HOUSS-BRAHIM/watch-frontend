@@ -70,13 +70,13 @@ export function MarketingFooter() {
           <div className="flex flex-col gap-3 text-center md:flex-row md:items-center md:justify-between">
             <p>© {currentYear} WatchTogether. All rights reserved.</p>
             <div className="flex items-center justify-center gap-4">
-              <Link href="#" className="transition-colors hover:text-foreground">
+              <Link href="/privacy" className="transition-colors hover:text-foreground">
                 Privacy
               </Link>
-              <Link href="#" className="transition-colors hover:text-foreground">
+              <Link href="/terms" className="transition-colors hover:text-foreground">
                 Terms
               </Link>
-              <Link href="#" className="transition-colors hover:text-foreground">
+              <Link href="/contact" className="transition-colors hover:text-foreground">
                 Contact
               </Link>
             </div>
